@@ -1,0 +1,35 @@
+{
+  "name": "space-x-launches",
+  "version": "1.0.0",
+  "description": "SpaceX Launches with Typescript, React and Apollo GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/papasavvas/space-x-launches.git"
+  },
+  "keywords": [
+    "typescript",
+    "react",
+    "apollo",
+    "graphql"
+  ],
+  "author": "Alexandros Papasavva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/papasavvas/space-x-launches/issues"
+  },
+  "homepage": "https://github.com/papasavvas/space-x-launches#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "nodemon": "^2.0.6"
+  }
+}
