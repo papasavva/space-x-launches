@@ -4,6 +4,7 @@
   "description": "SpaceX Launches with Typescript, React and Apollo GraphQL",
   "main": "index.js",
   "scripts": {
+    "compile" : "tsc -w",
     "start": "nodemon dist/server.js",
     "format": "prettier --write src/**/*.ts",
     "lint": "tsc --noEmit && eslint --fix src/**/*.ts "
