@@ -5,7 +5,7 @@ export class Schema {
     private static instance: Schema
 
     // Launch Type
-    private LaunchType: GraphQLObjectType = new GraphQLObjectType({
+    private LaunchType = new GraphQLObjectType({
         name: 'Launch',
         fields: () => ({
             flight_number: { type: GraphQLInt },
@@ -18,7 +18,7 @@ export class Schema {
     })
 
     // Rocket Type
-    private RocketType: GraphQLObjectType = new GraphQLObjectType({
+    private RocketType = new GraphQLObjectType({
         name: 'Rocket',
         fields: () => ({
             rocket_id: { type: GraphQLString },
@@ -28,13 +28,25 @@ export class Schema {
     })
 
     // Root Query
-    private RootQuery: GraphQLObjectType = new GraphQLObjectType({
+    private RootQuery = new GraphQLObjectType({
         name: 'RootQueryType',
         fields: {
             launches: {
                 type: new GraphQLList(this.LaunchType),
                 resolve(parent, args) {
                     return axios.get('https://api.spacexdata.com/v3/launches').then((res) => res.data)
+                },
+            },
+
+            launch: {
+                type: this.LaunchType,
+                args: {
+                    flight_number: { type: GraphQLInt },
+                },
+                resolve(parent, args) {
+                    return axios
+                        .get(`https://api.spacexdata.com/v3/launches/${args.flight_number}`)
+                        .then((res) => res.data)
                 },
             },
         },
