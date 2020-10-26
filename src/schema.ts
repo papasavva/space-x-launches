@@ -4,9 +4,9 @@ import axios from 'axios'
 export class Schema {
     private static instance: Schema
 
-    // Launch Type
+    // LaunchItem Type
     private LaunchType = new GraphQLObjectType({
-        name: 'Launch',
+        name: 'LaunchItem',
         fields: () => ({
             flight_number: { type: GraphQLInt },
             mission_name: { type: GraphQLString },

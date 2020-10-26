@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { ApolloClient, ApolloProvider, InMemoryCache, useQuery, gql } from '@apollo/client'
 
-import Launch from './Launch'
+import LaunchItem from './LaunchItem'
 import MissionKey from './MissionKey'
 
 const LAUNCH_QUERY = gql`
@@ -32,7 +32,7 @@ export function Launches() {
             <MissionKey />
             <Fragment>
                 {data.launches.map((launch) => (
-                    <Launch key={launch.flight_number} launch={launch} />
+                    <LaunchItem key={launch.flight_number} launch={launch} />
                 ))}
             </Fragment>
         </Fragment>
