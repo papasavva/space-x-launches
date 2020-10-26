@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { ApolloClient, ApolloProvider, InMemoryCache, useQuery, gql } from '@apollo/client'
+import { useQuery, gql } from '@apollo/client'
 
 import LaunchItem from './LaunchItem'
 import MissionKey from './MissionKey'
