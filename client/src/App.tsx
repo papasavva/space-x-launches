@@ -20,10 +20,10 @@ function App() {
             <Router>
                 <div className="container">
                     <img src={logo} alt="SpaceX logo" style={{ width: 500, display: 'block', margin: 'auto' }} />
-                    {/*<Launches />*/}
+
+                    <Route exact path={'/'} component={Launches} />
+                    <Route exact path={'/launch/:flight_number'} component={Launch} />
                 </div>
-                <Route exact path={'/'} component={Launches} />
-                <Route exact path={'/launch/:flight_number'} component={Launch} />
             </Router>
         </ApolloProvider>
     )
