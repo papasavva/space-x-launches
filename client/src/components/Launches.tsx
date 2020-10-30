@@ -20,6 +20,7 @@ const LAUNCH_QUERY = gql`
         }
     }
 `
+
 export function Launches() {
     const { loading, error, data } = useQuery(LAUNCH_QUERY)
 
