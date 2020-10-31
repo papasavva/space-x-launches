@@ -1,11 +1,13 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import { graphqlHTTP } from 'express-graphql'
 import { Schema } from './schema'
 import cors from 'cors'
-
+import path from 'path'
 import { rightPad } from './helpers/formatter'
+
 const application = express()
 
+application.use(express.static('public'))
 application.use(cors())
 application.use(
     '/graphql',
@@ -14,6 +16,10 @@ application.use(
         graphiql: true,
     }),
 )
+
+application.get('*', (req: Request, res: Response) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
 
 const PORT = 5000
 application.listen(PORT, () => {
