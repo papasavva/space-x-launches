@@ -4,15 +4,15 @@
   "description": "SpaceX Launches with Typescript, React and Apollo GraphQL",
   "main": "index.js",
   "scripts": {
-    "watch:ts": "tsc -w",
     "start": "node dist/server.js",
+    "start:dev": "tsc -w & concurrently \"npm run watch:node\" \"npm run client\"",
     "heroku-postbuild": "tsc & cd client && npm install && npm run build",
+    "watch:ts": "tsc -w",
     "watch:node": "nodemon dist/server.js",
     "deploy": "git push heroku main",
     "format": "prettier --write src/**/*.ts",
     "lint": "tsc --noEmit && eslint --fix src/**/*.ts ",
-    "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "client": "npm run start --prefix client"
   },
   "repository": {
     "type": "git",
