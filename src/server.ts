@@ -7,8 +7,7 @@ import { rightPad } from './helpers/formatter'
 
 const application = express()
 
-application.use(express.static('public'))
-application.use(cors())
+//Application-level middleware
 application.use(
     '/graphql',
     graphqlHTTP({
@@ -16,6 +15,8 @@ application.use(
         graphiql: true,
     }),
 )
+application.use(express.static('public'))
+application.use(cors())
 
 application.get('*', (req: Request, res: Response) => {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
