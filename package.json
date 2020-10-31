@@ -6,7 +6,7 @@
   "scripts": {
     "watch:ts": "tsc -w",
     "start": "node dist/server.js",
-    "heroku-postbuild": "cd client && npm install && npm run build",
+    "heroku-postbuild": "tsc & cd client && npm install && npm run build",
     "watch:node": "nodemon dist/server.js",
     "deploy": "git push heroku main",
     "format": "prettier --write src/**/*.ts",
