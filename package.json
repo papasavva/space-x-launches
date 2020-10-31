@@ -8,7 +8,7 @@
     "start": "node dist/server.js",
     "postinstall": "tsc",
     "watch:node": "nodemon dist/server.js",
-    "deploy" : "push heroku main",
+    "deploy" : "git push heroku main",
     "format": "prettier --write src/**/*.ts",
     "lint": "tsc --noEmit && eslint --fix src/**/*.ts ",
     "client": "npm run start --prefix client",
