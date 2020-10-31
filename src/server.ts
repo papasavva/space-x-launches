@@ -22,7 +22,7 @@ application.get('*', (req: Request, res: Response) => {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
 })
 
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 application.listen(PORT, () => {
     console.log(`${rightPad('Application:')} SpaceX Launches`)
     console.log(`${rightPad('GraphQLi:')} http://localhost:5000/graphql`)
